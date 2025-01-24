@@ -3,7 +3,7 @@ import './App.css';
 import CountryGuessingPage from './pages/countryGuessingPage/countryGuessingPage';
 import GameOverPage from './pages/gameOverPage/gameOverPage';
 import SettingsPage from './pages/settingsPage/settingsPage';
-import HomePage from './pages/homePage/HomePage';
+import HomePage from './pages/homePage/homePage';
 
 function App() {
   return (
