@@ -12,6 +12,7 @@ const CountryGuessingPage = () => {
   const [backgroundColor, setBackgroundColor] = useState('white');
   const [shuffledOptions, setShuffledOptions] = useState([]);
   const [clickedOption, setClickedOption] = useState(null);
+  const [loadingImage, setLoadingImage] = useState(true);
   const navigate = useNavigate();
 
   const { timeBetweenRounds, numberOfRounds } = settingsService.getSettings();
@@ -64,7 +65,10 @@ const CountryGuessingPage = () => {
       }
     }, timeBetweenRounds);
   };
-  
+
+  const handleImageLoad = () => {
+    setLoadingImage(false);
+  };
 
   return (
     <div className="game-container" style={{ backgroundColor }}>
@@ -76,10 +80,12 @@ const CountryGuessingPage = () => {
         {currentRoundIndex} / {numberOfRounds}
       </div>
       <div className="flag-container">
+        {loadingImage && <div className="loading-indicator">Loading Flag...</div>}
         <img
           src={`https://flagcdn.com/w320/${currentRound.countryToGuess.code}.png`}
           className="flag-image"
           alt="Country flag"
+          onLoad={handleImageLoad} 
         />
       </div>
       <div className="options-container">
