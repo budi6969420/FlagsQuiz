@@ -42,20 +42,20 @@ const CountryGuessingPage = () => {
 
   const onOptionClick = (option) => {
     setClickedOption(option.code);
-
+  
     if (option.code === currentRound.countryToGuess.code) {
       setBackgroundColor('#7cb46b');
       setScore((prevScore) => prevScore + 1);
     } else {
       setBackgroundColor('#ff2c2c');
     }
-
+  
     setTimeout(() => {
       setBackgroundColor('white');
       setClickedOption(null);
       const updatedRounds = game.rounds.slice(1);
       if (updatedRounds.length === 0) {
-        navigate('/game-over', { state: { score, totalRoundCount: numberOfRounds } });
+        navigate('/game-over', { state: { score: score + (option.code === currentRound.countryToGuess.code ? 1 : 0), totalRoundCount: numberOfRounds } });
       } else {
         setGame((prevGame) => ({ ...prevGame, rounds: updatedRounds }));
         const newRound = updatedRounds[0];
@@ -64,6 +64,7 @@ const CountryGuessingPage = () => {
       }
     }, timeBetweenRounds);
   };
+  
 
   return (
     <div className="game-container" style={{ backgroundColor }}>
