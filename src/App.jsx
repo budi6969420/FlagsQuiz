@@ -1,9 +1,9 @@
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import './App.css';
 import CountryGuessingPage from './pages/countryGuessingPage/countryGuessingPage';
-import HomePage from './pages/homePage/HomePage';
 import GameOverPage from './pages/gameOverPage/gameOverPage';
 import SettingsPage from './pages/settingsPage/settingsPage';
+import HomePage from './pages/homePage/HomePage';
 
 function App() {
   return (
