@@ -82,7 +82,7 @@ const CountryGuessingPage = () => {
       <div className="flag-container">
         {loadingImage && <div className="loading-indicator">Loading Flag...</div>}
         <img
-          src={`https://flagcdn.com/w320/${currentRound.countryToGuess.code}.png`}
+          src={`https://flagcdn.com/w160/${currentRound.countryToGuess.code}.png`}
           className="flag-image"
           alt="Country flag"
           onLoad={handleImageLoad} 
