@@ -16,9 +16,9 @@ const HomePage = () => {
   return (
     <div className="home-container">
       <div className="main-message">
-        <h1 className="home-title">Hey Viviana!</h1>
+        <h1 className="home-title">Budi's flags!</h1>
         <p className="home-text">
-          This website is supposed to help you get better at flags, to be able recognize them whenever we are out and about. (id be rly impressed)
+          flag game wooo, u get a cookie if u get them all right!
         </p>
         <button className="button" onClick={handleStartGame}>
           Start Game
